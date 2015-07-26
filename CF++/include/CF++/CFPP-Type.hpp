@@ -52,6 +52,7 @@ namespace CF
             
             operator CFTypeRef              () const;
             operator CFBooleanRef           () const;
+            operator CFBundleRef            () const;
             operator CFNumberRef            () const;
             operator CFDateRef              () const;
             operator CFStringRef            () const;
@@ -75,6 +76,7 @@ namespace CF
             
             bool IsValid( void ) const;
             bool IsBoolean( void ) const;
+            bool IsBundle( void ) const;
             bool IsNumber( void ) const;
             bool IsDate( void ) const;
             bool IsString( void ) const;

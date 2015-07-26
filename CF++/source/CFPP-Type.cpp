@@ -70,6 +70,11 @@ namespace CF
         return ( this->IsBoolean() ) ? static_cast< CFBooleanRef >( this->GetCFObject() ) : NULL;
     }
     
+    Type::operator CFBundleRef () const
+    {
+        return ( this->IsBundle() ) ? static_cast< CFBundleRef >( const_cast< void * >( this->GetCFObject() ) ) : NULL;
+    }
+    
     Type::operator CFNumberRef () const
     {
         return ( this->IsNumber() ) ? static_cast< CFNumberRef >( this->GetCFObject() ) : NULL;
@@ -214,6 +219,11 @@ namespace CF
     bool Type::IsBoolean( void ) const
     {
         return this->GetTypeID() == CFBooleanGetTypeID();
+    }
+    
+    bool Type::IsBundle( void ) const
+    {
+        return this->GetTypeID() == CFBundleGetTypeID();
     }
     
     bool Type::IsNumber( void ) const
