@@ -443,7 +443,6 @@
 		05BDE02318CDB2450028F339 /* CFPP-Type.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-Type.cpp"; sourceTree = "<group>"; };
 		05BDE02418CDB2450028F339 /* CFPP-URL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-URL.cpp"; sourceTree = "<group>"; };
 		05DD29471B64EF4A0028B86F /* CFPP-Bundle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-Bundle.hpp"; sourceTree = "<group>"; };
-		05DD294F1B64F75E0028B86F /* CFPP-Localization.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-Localization.hpp"; sourceTree = "<group>"; };
 		05EFF0DF191BA9CE00F187F5 /* CFPP-PropertyListType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-PropertyListType.hpp"; sourceTree = "<group>"; };
 		05EFF0E8191BB66A00F187F5 /* CFPP-PropertyListType-Definition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-PropertyListType-Definition.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -650,7 +649,6 @@
 				05BDE01018CDB2450028F339 /* CFPP-Date.hpp */,
 				05BDE01118CDB2450028F339 /* CFPP-Dictionary.hpp */,
 				05A3A76C18CF00D200F7E0BC /* CFPP-Error.hpp */,
-				05DD294F1B64F75E0028B86F /* CFPP-Localization.hpp */,
 				05BDE01218CDB2450028F339 /* CFPP-Number.hpp */,
 				05BDE01318CDB2450028F339 /* CFPP-Pair.hpp */,
 				05EFF0E8191BB66A00F187F5 /* CFPP-PropertyListType-Definition.hpp */,

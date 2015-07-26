@@ -83,7 +83,6 @@
 #include <CF++/CFPP-ReadStream.hpp>
 #include <CF++/CFPP-WriteStream.hpp>
 #include <CF++/CFPP-Bundle.hpp>
-#include <CF++/CFPP-Localization.hpp>
 #include <CF++/CFPP-PropertyListType-Definition.hpp>
 
 #ifdef _WIN32
