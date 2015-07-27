@@ -226,6 +226,16 @@
 		05A6041E1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05A604161B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp */; };
 		05A604231B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05A604221B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp */; };
 		05A604241B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05A604221B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp */; };
+		05AA777E1B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA777F1B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77801B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77811B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77821B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77831B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77841B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA77851B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */; };
+		05AA778A1B6634F700F8FDAF /* Test-CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA77891B6634F700F8FDAF /* Test-CFPP-Bundle.cpp */; };
+		05AA778B1B6634F700F8FDAF /* Test-CFPP-Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AA77891B6634F700F8FDAF /* Test-CFPP-Bundle.cpp */; };
 		05BDE02818CDB2540028F339 /* CFPP-Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05BDE01B18CDB2450028F339 /* CFPP-Array.cpp */; };
 		05BDE02918CDB2540028F339 /* CFPP-Boolean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05BDE01C18CDB2450028F339 /* CFPP-Boolean.cpp */; };
 		05BDE02A18CDB2540028F339 /* CFPP-Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05BDE01D18CDB2450028F339 /* CFPP-Data.cpp */; };
@@ -430,6 +440,8 @@
 		05A3A76D18CF00DF00F7E0BC /* CFPP-Error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-Error.cpp"; sourceTree = "<group>"; };
 		05A604161B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-ReadStream-Iterator.cpp"; sourceTree = "<group>"; };
 		05A604221B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Test-CFPP-ReadStream-Iterator.cpp"; sourceTree = "<group>"; };
+		05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-Bundle.cpp"; sourceTree = "<group>"; };
+		05AA77891B6634F700F8FDAF /* Test-CFPP-Bundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Test-CFPP-Bundle.cpp"; sourceTree = "<group>"; };
 		05AFBBB81B3E0F78003830B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05BDE00D18CDB2450028F339 /* CFPP-Array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-Array.hpp"; sourceTree = "<group>"; };
 		05BDE00E18CDB2450028F339 /* CFPP-Boolean.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-Boolean.hpp"; sourceTree = "<group>"; };
@@ -551,6 +563,7 @@
 				0547029C1B1D8FA00036259D /* Test-CFPP-Array.cpp */,
 				0547029D1B1D8FA00036259D /* Test-CFPP-AutoPointer.cpp */,
 				0547029E1B1D8FA00036259D /* Test-CFPP-Boolean.cpp */,
+				05AA77891B6634F700F8FDAF /* Test-CFPP-Bundle.cpp */,
 				052B1ADA1B45C9E000B97CB9 /* Test-CFPP-Data-Iterator.cpp */,
 				0547029F1B1D8FA00036259D /* Test-CFPP-Data.cpp */,
 				054702A01B1D8FA00036259D /* Test-CFPP-Date.cpp */,
@@ -683,6 +696,7 @@
 				05BDE01B18CDB2450028F339 /* CFPP-Array.cpp */,
 				056C585B1B1707EE00C6214A /* CFPP-AutoPointer.cpp */,
 				05BDE01C18CDB2450028F339 /* CFPP-Boolean.cpp */,
+				05AA777D1B662F2A00F8FDAF /* CFPP-Bundle.cpp */,
 				054D7D311B46CC1D006AFF67 /* CFPP-Data-Iterator.cpp */,
 				05BDE01D18CDB2450028F339 /* CFPP-Data.cpp */,
 				05BDE01E18CDB2450028F339 /* CFPP-Date.cpp */,
@@ -1178,6 +1192,7 @@
 				052B357A1B4EB810009D98A4 /* CFPP-Data.cpp in Sources */,
 				052B357B1B4EB810009D98A4 /* CFPP-AutoPointer.cpp in Sources */,
 				052B357C1B4EB810009D98A4 /* CFPP-ReadStream.cpp in Sources */,
+				05AA777F1B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				052B357D1B4EB810009D98A4 /* CFPP-Type.cpp in Sources */,
 				052B357E1B4EB810009D98A4 /* CFPP-Array-Iterator.cpp in Sources */,
 				052B357F1B4EB810009D98A4 /* CFPP-URL.cpp in Sources */,
@@ -1205,6 +1220,7 @@
 				052B35981B4EB814009D98A4 /* CFPP-Data.cpp in Sources */,
 				052B35991B4EB814009D98A4 /* CFPP-AutoPointer.cpp in Sources */,
 				052B359A1B4EB814009D98A4 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77811B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				052B359B1B4EB814009D98A4 /* CFPP-Type.cpp in Sources */,
 				052B359C1B4EB814009D98A4 /* CFPP-Array-Iterator.cpp in Sources */,
 				052B359D1B4EB814009D98A4 /* CFPP-URL.cpp in Sources */,
@@ -1232,6 +1248,7 @@
 				052B35C81B4EB81C009D98A4 /* CFPP-Array.cpp in Sources */,
 				052B35C91B4EB81C009D98A4 /* CFPP-AutoPointer.cpp in Sources */,
 				052B35CA1B4EB81C009D98A4 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77831B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				052B35CB1B4EB81C009D98A4 /* CFPP-Boolean.cpp in Sources */,
 				052B35CC1B4EB81C009D98A4 /* CFPP-Array-Iterator.cpp in Sources */,
 				052B35CD1B4EB81C009D98A4 /* CFPP-Data.cpp in Sources */,
@@ -1259,6 +1276,7 @@
 				052B35FA1B4EB825009D98A4 /* CFPP-Data.cpp in Sources */,
 				052B35FB1B4EB825009D98A4 /* CFPP-AutoPointer.cpp in Sources */,
 				052B35FC1B4EB825009D98A4 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77851B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				052B35FD1B4EB825009D98A4 /* CFPP-Type.cpp in Sources */,
 				052B35FE1B4EB825009D98A4 /* CFPP-Array-Iterator.cpp in Sources */,
 				052B35FF1B4EB825009D98A4 /* CFPP-URL.cpp in Sources */,
@@ -1289,6 +1307,7 @@
 				05A604241B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */,
 				052B36201B4EB828009D98A4 /* Test-CFPP-URL.cpp in Sources */,
 				052B36211B4EB828009D98A4 /* Test-CFPP-Data-Iterator.cpp in Sources */,
+				05AA778B1B6634F700F8FDAF /* Test-CFPP-Bundle.cpp in Sources */,
 				0559FA841B518EFF00BF8E7B /* Test-CFPP-WriteStream.cpp in Sources */,
 				052B36221B4EB828009D98A4 /* Test-CFPP-AutoPointer.cpp in Sources */,
 				052B36231B4EB828009D98A4 /* Test-CFPP-ReadStream.cpp in Sources */,
@@ -1317,6 +1336,7 @@
 				05A604231B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */,
 				054702BA1B1D8FD10036259D /* Test-CFPP-URL.cpp in Sources */,
 				052B1AE41B45CC0100B97CB9 /* Test-CFPP-Data-Iterator.cpp in Sources */,
+				05AA778A1B6634F700F8FDAF /* Test-CFPP-Bundle.cpp in Sources */,
 				0559FA831B518EFF00BF8E7B /* Test-CFPP-WriteStream.cpp in Sources */,
 				054702AE1B1D8FD10036259D /* Test-CFPP-AutoPointer.cpp in Sources */,
 				054702B71B1D8FD10036259D /* Test-CFPP-ReadStream.cpp in Sources */,
@@ -1342,6 +1362,7 @@
 				05BDE02A18CDB2540028F339 /* CFPP-Data.cpp in Sources */,
 				056C585C1B1708D800C6214A /* CFPP-AutoPointer.cpp in Sources */,
 				059DBCC21B14DC5C0014D9A1 /* CFPP-ReadStream.cpp in Sources */,
+				05AA777E1B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				05BDE03018CDB2540028F339 /* CFPP-Type.cpp in Sources */,
 				054D7D341B46CC1D006AFF67 /* CFPP-Array-Iterator.cpp in Sources */,
 				05BDE03118CDB2540028F339 /* CFPP-URL.cpp in Sources */,
@@ -1369,6 +1390,7 @@
 				05BDE03418CDB2540028F339 /* CFPP-Data.cpp in Sources */,
 				056C585D1B1708D800C6214A /* CFPP-AutoPointer.cpp in Sources */,
 				059DBCBC1B14DC5B0014D9A1 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77801B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				05BDE03A18CDB2540028F339 /* CFPP-Type.cpp in Sources */,
 				054D7D3B1B46CC25006AFF67 /* CFPP-Array-Iterator.cpp in Sources */,
 				05BDE03B18CDB2540028F339 /* CFPP-URL.cpp in Sources */,
@@ -1396,6 +1418,7 @@
 				05BDE03C18CDB2540028F339 /* CFPP-Array.cpp in Sources */,
 				056C585E1B1708D900C6214A /* CFPP-AutoPointer.cpp in Sources */,
 				059DBCBE1B14DC5B0014D9A1 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77821B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				05BDE03D18CDB2540028F339 /* CFPP-Boolean.cpp in Sources */,
 				054D7D3F1B46CC26006AFF67 /* CFPP-Array-Iterator.cpp in Sources */,
 				05BDE03E18CDB2540028F339 /* CFPP-Data.cpp in Sources */,
@@ -1423,6 +1446,7 @@
 				05BDE04818CDB2550028F339 /* CFPP-Data.cpp in Sources */,
 				056C585F1B1708D900C6214A /* CFPP-AutoPointer.cpp in Sources */,
 				059DBCC01B14DC5C0014D9A1 /* CFPP-ReadStream.cpp in Sources */,
+				05AA77841B662F2A00F8FDAF /* CFPP-Bundle.cpp in Sources */,
 				05BDE04E18CDB2550028F339 /* CFPP-Type.cpp in Sources */,
 				054D7D431B46CC26006AFF67 /* CFPP-Array-Iterator.cpp in Sources */,
 				05BDE04F18CDB2550028F339 /* CFPP-URL.cpp in Sources */,

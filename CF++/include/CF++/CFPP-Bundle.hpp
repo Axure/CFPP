@@ -47,6 +47,18 @@ namespace CF
             static Bundle GetBundleWithIdentifier( String identifier );
             static Bundle GetMainBundle( void );
             
+            static URL   GetResourceURLInDirectory( URL bundleURL, String resourceName, String resourceType, String subDirName );
+            static Array GetResourceURLsOfTypeInDirectory( URL bundleURL, String resourceType, String subDirName );
+            
+            static Dictionary GetInfoDictionaryInDirectory( URL bundleURL );
+            static Dictionary GetInfoDictionaryForURL( URL url );
+            static bool       GetPackageInfoInDirectory( URL url, UInt32 * packageType, UInt32 * packageCreator );
+            static Array      GetExecutableArchitecturesForURL( URL url );
+            
+            static Array GetLocalizationsForPreferences( Array locArray, Array prefArray );
+            static Array GetLocalizationsForURL( URL url );
+            static Array GetPreferredLocalizationsFromArray( Array locArray );
+            
             Bundle( void );
             Bundle( const Bundle & value );
             Bundle( const AutoPointer & value );
@@ -87,9 +99,7 @@ namespace CF
             
             void            CloseBundleResourceMap( CFBundleRefNum refNum );
             URL             GetResourceURL( String resourceName, String resourceType, String subDirName );
-            URL             GetResourceURLInDirectory( URL bundleURL, String resourceName, String resourceType, String subDirName );
             Array           GetResourceURLsOfType( String resourceType, String subDirName );
-            Array           GetResourceURLsOfTypeInDirectory( URL bundleURL, String resourceType, String subDirName );
             URL             GetResourceURLForLocalization( String resourceName, String resourceType, String subDirName, String localizationName );
             Array           GetResourceURLsOfTypeForLocalization( String resourceType, String subDirName, String localizationName );
             SInt32          OpenBundleResourceFiles( CFBundleRefNum * refNum, CFBundleRefNum * localizedRefNum );
@@ -97,10 +107,7 @@ namespace CF
             
             Array   GetBundleLocalizations( void );
             String  GetLocalizedString( String key, String value, String tableName );
-            Array   GetLocalizationsForPreferences( Array locArray, Array prefArray );
-            Array   GetLocalizationsForURL( URL url );
-            Array   GetPreferredLocalizationsFromArray( Array locArray );
-
+            
             void      * GetDataPointerForName( String symbolName );
             void        GetDataPointersForNames( Array symbolNames, void * stbl[] );
             void      * GetFunctionPointerForName( String functionName );
@@ -113,19 +120,11 @@ namespace CF
             Dictionary  GetInfoDictionary( void );
             Dictionary  GetLocalInfoDictionary( void );
             CFTypeRef   GetValueForInfoDictionaryKey( String key );
-            Dictionary  GetInfoDictionaryInDirectory( URL bundleURL );
-            Dictionary  GetInfoDictionaryForURL( URL url );
             void        GetPackageInfo( UInt32 * packageType, UInt32 * packageCreator );
-            bool        GetPackageInfoInDirectory( URL url, UInt32 * packageType, UInt32 * packageCreator );
             Array       GetExecutableArchitectures( void );
-            Array       GetExecutableArchitecturesForURL( URL url );
             UInt32      GetVersionNumber( void );
             
             friend void swap( Bundle & v1, Bundle & v2 );
-            
-        private:
-            
-            CFBundleRef _cfObject;
     };
 }
 
