@@ -39,16 +39,44 @@
 using namespace testing;
 
 TEST( CFPP_Bundle, GetAllBundles )
-{}
+{
+    CF::Array           a;
+    CF::Array::Iterator i;
+    CF::Bundle          b;
+    
+    a = CF::Bundle::GetAllBundles();
+    
+    ASSERT_TRUE( a.GetCount() > 0 );
+    
+    for( i = a.begin(); i != a.end(); ++i )
+    {
+        ASSERT_TRUE( CF::Bundle( *( i ) ).IsValid() );
+    }
+}
 
 TEST( CFPP_Bundle, GetBundlesFromDirectory )
 {}
 
 TEST( CFPP_Bundle, GetBundleWithIdentifier )
-{}
+{
+    CF::Bundle b1;
+    CF::Bundle b2;
+    
+    b1 = CF::Bundle::GetBundleWithIdentifier( "com.apple.CoreFoundation" );
+    b2 = CF::Bundle::GetBundleWithIdentifier( "foo.bar" );
+    
+    ASSERT_TRUE(  b1.IsValid() );
+    ASSERT_FALSE( b2.IsValid() );
+}
 
 TEST( CFPP_Bundle, GetMainBundle )
-{}
+{
+    CF::Bundle b;
+    
+    b = CF::Bundle::GetMainBundle();
+    
+    ASSERT_TRUE( b.IsValid() );
+}
 
 TEST( CFPP_Bundle, GetResourceURLInDirectory )
 {}
@@ -78,7 +106,11 @@ TEST( CFPP_Bundle, GetPreferredLocalizationsFromArray )
 {}
 
 TEST( CFPP_Bundle, CTOR )
-{}
+{
+    CF::Bundle b;
+    
+    ASSERT_FALSE( b.IsValid() );
+}
 
 TEST( CFPP_Bundle, CTOR_AutoPointer )
 {}
@@ -122,10 +154,23 @@ TEST( CFPP_Bundle, OperatorAssignURL )
 {}
 
 TEST( CFPP_Bundle, GetTypeID )
-{}
+{
+    CF::Bundle b;
+    
+    ASSERT_EQ( b.GetTypeID(), CFBundleGetTypeID() );
+}
 
 TEST( CFPP_Bundle, GetCFObject )
-{}
+{
+    CF::Bundle b1;
+    CF::Bundle b2;
+    
+    b2 = CF::Bundle::GetMainBundle();
+    
+    ASSERT_TRUE( b1.GetCFObject() == NULL );
+    ASSERT_TRUE( b2.GetCFObject() != NULL );
+    ASSERT_EQ( CFGetTypeID( b2.GetCFObject() ), CFBundleGetTypeID() );
+}
 
 TEST( CFPP_Bundle, IsExecutableLoaded )
 {}

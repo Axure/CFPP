@@ -38,7 +38,7 @@
 
 namespace CF
 {
-    class CFPP_EXPORT Bundle
+    class CFPP_EXPORT Bundle: public Type
     {
         public:
             
@@ -125,6 +125,10 @@ namespace CF
             UInt32      GetVersionNumber( void );
             
             friend void swap( Bundle & v1, Bundle & v2 );
+            
+        private:
+            
+            CFBundleRef _cfObject;
     };
 }
 

@@ -39,7 +39,7 @@ namespace CF
 {
     Array Bundle::GetAllBundles( void )
     {
-        return static_cast< CFArrayRef >( NULL );
+        return CFBundleGetAllBundles();
     }
     
     Array Bundle::GetBundlesFromDirectory( URL directoryURL, Array bundleTypes )
@@ -54,12 +54,12 @@ namespace CF
     {
         ( void )identifier;
         
-        return static_cast< CFBundleRef >( NULL );
+        return CFBundleGetBundleWithIdentifier( identifier );
     }
     
     Bundle Bundle::GetMainBundle( void )
     {
-        return static_cast< CFBundleRef >( NULL );
+        return CFBundleGetMainBundle();
     }
     
     
@@ -134,35 +134,44 @@ namespace CF
         return static_cast< CFArrayRef >( NULL );
     }
     
-    Bundle::Bundle( void )
+    Bundle::Bundle( void ): _cfObject( NULL )
     {}
     
-    Bundle::Bundle( const Bundle & value )
+    Bundle::Bundle( const Bundle & value ): _cfObject( NULL )
     {
         ( void )value;
     }
     
-    Bundle::Bundle( const AutoPointer & value )
+    Bundle::Bundle( const AutoPointer & value ): _cfObject( NULL )
     {
-        ( void )value;
+        if( value.IsValid() && value.GetTypeID() == this->GetTypeID() )
+        {
+            this->_cfObject = static_cast< CFBundleRef >( const_cast< void * >( CFRetain( value ) ) );
+        }
     }
     
-    Bundle::Bundle( CFTypeRef cfObject )
+    Bundle::Bundle( CFTypeRef cfObject ): _cfObject( NULL )
     {
-        ( void )cfObject;
+        if( cfObject != NULL && CFGetTypeID( cfObject ) == this->GetTypeID() )
+        {
+            this->_cfObject = static_cast< CFBundleRef >( const_cast< void * >( CFRetain( cfObject ) ) );
+        }
     }
     
-    Bundle::Bundle( CFBundleRef cfObject )
+    Bundle::Bundle( CFBundleRef cfObject ): _cfObject( NULL )
     {
-        ( void )cfObject;
+        if( cfObject != NULL && CFGetTypeID( cfObject ) == this->GetTypeID() )
+        {
+            this->_cfObject = static_cast< CFBundleRef >( const_cast< void * >( CFRetain( cfObject ) ) );
+        }
     }
     
-    Bundle::Bundle( String identifier )
+    Bundle::Bundle( String identifier ): _cfObject( NULL )
     {
         ( void )identifier;
     }
     
-    Bundle::Bundle( URL url )
+    Bundle::Bundle( URL url ): _cfObject( NULL )
     {
         ( void )url;
     }
@@ -176,7 +185,14 @@ namespace CF
     #endif
 
     Bundle::~Bundle( void )
-    {}
+    {
+        if( this->_cfObject != NULL )
+        {
+            CFRelease( this->_cfObject );
+            
+            this->_cfObject = NULL;
+        }
+    }
     
     Bundle & Bundle::operator = ( Bundle value )
     {
@@ -222,12 +238,12 @@ namespace CF
     
     CFTypeID Bundle::GetTypeID( void ) const
     {
-        return 0;
+        return CFBundleGetTypeID();
     }
     
     CFTypeRef Bundle::GetCFObject( void ) const
     {
-        return static_cast< CFTypeRef >( NULL );
+        return this->_cfObject;
     }
     
     bool Bundle::IsExecutableLoaded( void )
