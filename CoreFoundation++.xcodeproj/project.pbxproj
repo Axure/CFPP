@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050CB3621CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB3631CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB3641CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB3651CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB36A1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB36B1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB36C1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB36D1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB36E1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB36F1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB3701CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB3711CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */; };
+		050CB3731CBCF197008CE9FC /* Test-CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3721CBCF197008CE9FC /* Test-CFPP-Socket.cpp */; };
+		050CB3741CBCF197008CE9FC /* Test-CFPP-Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB3721CBCF197008CE9FC /* Test-CFPP-Socket.cpp */; };
 		052B1AE31B45CC0100B97CB9 /* Test-CFPP-Array-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 052B1AD91B45C9E000B97CB9 /* Test-CFPP-Array-Iterator.cpp */; };
 		052B1AE41B45CC0100B97CB9 /* Test-CFPP-Data-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 052B1ADA1B45C9E000B97CB9 /* Test-CFPP-Data-Iterator.cpp */; };
 		052B1AE51B45CC0100B97CB9 /* Test-CFPP-Dictionary-Iterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 052B1ADB1B45C9E000B97CB9 /* Test-CFPP-Dictionary-Iterator.cpp */; };
@@ -374,6 +388,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "CFPP-Socket.hpp"; sourceTree = "<group>"; };
+		050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CFPP-Socket.cpp"; sourceTree = "<group>"; };
+		050CB3721CBCF197008CE9FC /* Test-CFPP-Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Test-CFPP-Socket.cpp"; sourceTree = "<group>"; };
 		051F09651946EB70004B6E47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		052B1AD41B45C99E00B97CB9 /* Test-CFPP-String-Iterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Test-CFPP-String-Iterator.cpp"; sourceTree = "<group>"; };
 		052B1AD91B45C9E000B97CB9 /* Test-CFPP-Array-Iterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Test-CFPP-Array-Iterator.cpp"; sourceTree = "<group>"; };
@@ -557,6 +574,7 @@
 				054702A51B1D8FA00036259D /* Test-CFPP-PropertyListType.cpp */,
 				05A604221B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp */,
 				054702A61B1D8FA00036259D /* Test-CFPP-ReadStream.cpp */,
+				050CB3721CBCF197008CE9FC /* Test-CFPP-Socket.cpp */,
 				052B1AD41B45C99E00B97CB9 /* Test-CFPP-String-Iterator.cpp */,
 				054702A71B1D8FA00036259D /* Test-CFPP-String.cpp */,
 				054702A81B1D8FA00036259D /* Test-CFPP-Type.cpp */,
@@ -661,6 +679,7 @@
 				05EFF0E8191BB66A00F187F5 /* CFPP-PropertyListType-Definition.hpp */,
 				05EFF0DF191BA9CE00F187F5 /* CFPP-PropertyListType.hpp */,
 				059DBCB41B14DB460014D9A1 /* CFPP-ReadStream.hpp */,
+				050CB3611CBCF172008CE9FC /* CFPP-Socket.hpp */,
 				05BDE01418CDB2450028F339 /* CFPP-String.hpp */,
 				05BDE01518CDB2450028F339 /* CFPP-Type.hpp */,
 				05BDE01618CDB2450028F339 /* CFPP-URL.hpp */,
@@ -687,6 +706,7 @@
 				05BDE02118CDB2450028F339 /* CFPP-Pair.cpp */,
 				05A604161B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp */,
 				059DBCB61B14DB640014D9A1 /* CFPP-ReadStream.cpp */,
+				050CB3691CBCF186008CE9FC /* CFPP-Socket.cpp */,
 				054D7D331B46CC1D006AFF67 /* CFPP-String-Iterator.cpp */,
 				05BDE02218CDB2450028F339 /* CFPP-String.cpp */,
 				05BDE02318CDB2450028F339 /* CFPP-Type.cpp */,
@@ -713,6 +733,7 @@
 			files = (
 				052B35AF1B4EB814009D98A4 /* CFPP-Type.hpp in Headers */,
 				052B35B01B4EB814009D98A4 /* CFPP-URL.hpp in Headers */,
+				050CB3631CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */,
 				052B35B11B4EB814009D98A4 /* CFPP-String.hpp in Headers */,
 				052B35B21B4EB814009D98A4 /* CFPP-Error.hpp in Headers */,
 				052B35B31B4EB814009D98A4 /* CFPP-AutoPointer.hpp in Headers */,
@@ -738,6 +759,7 @@
 			files = (
 				052B35DF1B4EB81C009D98A4 /* CFPP-Array.hpp in Headers */,
 				052B35E01B4EB81C009D98A4 /* CFPP-Boolean.hpp in Headers */,
+				050CB3651CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */,
 				052B35E11B4EB81C009D98A4 /* CFPP-Data.hpp in Headers */,
 				052B35E21B4EB81C009D98A4 /* CFPP-Date.hpp in Headers */,
 				052B35E31B4EB81C009D98A4 /* CFPP-AutoPointer.hpp in Headers */,
@@ -770,6 +792,7 @@
 			files = (
 				05BDE06E18CDB2600028F339 /* CFPP-Type.hpp in Headers */,
 				05BDE06F18CDB2600028F339 /* CFPP-URL.hpp in Headers */,
+				050CB3621CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */,
 				05BDE06D18CDB2600028F339 /* CFPP-String.hpp in Headers */,
 				05A3A77618CF00EC00F7E0BC /* CFPP-Error.hpp in Headers */,
 				056C58601B1708DC00C6214A /* CFPP-AutoPointer.hpp in Headers */,
@@ -795,6 +818,7 @@
 			files = (
 				05BDE05B18CDB25F0028F339 /* CFPP-Array.hpp in Headers */,
 				05BDE05C18CDB25F0028F339 /* CFPP-Boolean.hpp in Headers */,
+				050CB3641CBCF172008CE9FC /* CFPP-Socket.hpp in Headers */,
 				05BDE05D18CDB25F0028F339 /* CFPP-Data.hpp in Headers */,
 				05BDE05E18CDB25F0028F339 /* CFPP-Date.hpp in Headers */,
 				056C58611B1708DD00C6214A /* CFPP-AutoPointer.hpp in Headers */,
@@ -1178,6 +1202,7 @@
 				05A604181B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				052B35851B4EB810009D98A4 /* CFPP-Pair.cpp in Sources */,
 				052B35861B4EB810009D98A4 /* CFPP-UUID.cpp in Sources */,
+				050CB36B1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				052B35871B4EB810009D98A4 /* CFPP-String.cpp in Sources */,
 				052B35881B4EB810009D98A4 /* CFPP-Boolean.cpp in Sources */,
 				052B35891B4EB810009D98A4 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1205,6 +1230,7 @@
 				05A6041A1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				052B35A31B4EB814009D98A4 /* CFPP-Pair.cpp in Sources */,
 				052B35A41B4EB814009D98A4 /* CFPP-UUID.cpp in Sources */,
+				050CB36D1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				052B35A51B4EB814009D98A4 /* CFPP-String.cpp in Sources */,
 				052B35A61B4EB814009D98A4 /* CFPP-Boolean.cpp in Sources */,
 				052B35A71B4EB814009D98A4 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1232,6 +1258,7 @@
 				05A6041C1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				052B35D31B4EB81C009D98A4 /* CFPP-Pair.cpp in Sources */,
 				052B35D41B4EB81C009D98A4 /* CFPP-String.cpp in Sources */,
+				050CB36F1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				052B35D51B4EB81C009D98A4 /* CFPP-Type.cpp in Sources */,
 				052B35D61B4EB81C009D98A4 /* CFPP-URL.cpp in Sources */,
 				052B35D71B4EB81C009D98A4 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1259,6 +1286,7 @@
 				05A6041E1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				052B36051B4EB825009D98A4 /* CFPP-Pair.cpp in Sources */,
 				052B36061B4EB825009D98A4 /* CFPP-UUID.cpp in Sources */,
+				050CB3711CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				052B36071B4EB825009D98A4 /* CFPP-String.cpp in Sources */,
 				052B36081B4EB825009D98A4 /* CFPP-Boolean.cpp in Sources */,
 				052B36091B4EB825009D98A4 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1274,6 +1302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				052B361B1B4EB828009D98A4 /* Test-CFPP-Pair.cpp in Sources */,
+				050CB3741CBCF197008CE9FC /* Test-CFPP-Socket.cpp in Sources */,
 				052B361C1B4EB828009D98A4 /* Test-CFPP-Dictionary-Iterator.cpp in Sources */,
 				052B361D1B4EB828009D98A4 /* Test-CFPP-Array.cpp in Sources */,
 				05A604241B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */,
@@ -1302,6 +1331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				054702B51B1D8FD10036259D /* Test-CFPP-Pair.cpp in Sources */,
+				050CB3731CBCF197008CE9FC /* Test-CFPP-Socket.cpp in Sources */,
 				052B1AE51B45CC0100B97CB9 /* Test-CFPP-Dictionary-Iterator.cpp in Sources */,
 				054702AD1B1D8FD10036259D /* Test-CFPP-Array.cpp in Sources */,
 				05A604231B5D513C00C71A24 /* Test-CFPP-ReadStream-Iterator.cpp in Sources */,
@@ -1342,6 +1372,7 @@
 				05A604171B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				05BDE02E18CDB2540028F339 /* CFPP-Pair.cpp in Sources */,
 				05632F9018ED5E4900EB76D2 /* CFPP-UUID.cpp in Sources */,
+				050CB36A1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				05BDE02F18CDB2540028F339 /* CFPP-String.cpp in Sources */,
 				05BDE02918CDB2540028F339 /* CFPP-Boolean.cpp in Sources */,
 				054D7D361B46CC1D006AFF67 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1369,6 +1400,7 @@
 				05A604191B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				05BDE03818CDB2540028F339 /* CFPP-Pair.cpp in Sources */,
 				05632F9118ED5E4900EB76D2 /* CFPP-UUID.cpp in Sources */,
+				050CB36C1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				05BDE03918CDB2540028F339 /* CFPP-String.cpp in Sources */,
 				05BDE03318CDB2540028F339 /* CFPP-Boolean.cpp in Sources */,
 				054D7D3D1B46CC25006AFF67 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1396,6 +1428,7 @@
 				05A6041B1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				05BDE04218CDB2540028F339 /* CFPP-Pair.cpp in Sources */,
 				05BDE04318CDB2540028F339 /* CFPP-String.cpp in Sources */,
+				050CB36E1CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				05BDE04418CDB2540028F339 /* CFPP-Type.cpp in Sources */,
 				05BDE04518CDB2540028F339 /* CFPP-URL.cpp in Sources */,
 				054D7D411B46CC26006AFF67 /* CFPP-Dictionary-Iterator.cpp in Sources */,
@@ -1423,6 +1456,7 @@
 				05A6041D1B5D509E00C71A24 /* CFPP-ReadStream-Iterator.cpp in Sources */,
 				05BDE04C18CDB2550028F339 /* CFPP-Pair.cpp in Sources */,
 				05632F9318ED5E4900EB76D2 /* CFPP-UUID.cpp in Sources */,
+				050CB3701CBCF186008CE9FC /* CFPP-Socket.cpp in Sources */,
 				05BDE04D18CDB2550028F339 /* CFPP-String.cpp in Sources */,
 				05BDE04718CDB2550028F339 /* CFPP-Boolean.cpp in Sources */,
 				054D7D451B46CC26006AFF67 /* CFPP-Dictionary-Iterator.cpp in Sources */,
