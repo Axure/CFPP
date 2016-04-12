@@ -28,65 +28,46 @@
  ******************************************************************************/
 
 /*!
- * @header      CF++.h
+ * @header      CFPP-MessagePort.h
  * @copyright   (c) 2014 - Jean-David Gadina - www.xs-labs.com / www.digidna.net
- * @abstract    CoreFoundation++ main header file
+ * @abstract    CoreFoundation++ CFMessagePortRef wrapper
  */
 
-#ifndef CFPP
-#define CFPP
+#ifndef CFPP_NOTIFICATION_CENTER_H
+#define CFPP_NOTIFICATION_CENTER_H
 
-#include <CoreFoundation/CoreFoundation.h>
-#include <string>
-#include <iostream>
-#include <vector>
-#include <memory>
-#include <algorithm>
+namespace CF
+{
+    class CFPP_EXPORT MessagePort: public Type
+    {
+        public:
+            
+            MessagePort( void );
+            MessagePort( const MessagePort & value );
+            MessagePort( const AutoPointer & value );
+            MessagePort( CFTypeRef value );
+            MessagePort( CFMessagePortRef value );
+            
+            #ifdef CFPP_HAS_CPP11
+            MessagePort( MessagePort && value );
+            #endif
+            
+            virtual ~MessagePort( void );
+            
+            MessagePort & operator = ( MessagePort value );
+            MessagePort & operator = ( const AutoPointer & value );
+            MessagePort & operator = ( CFTypeRef value );
+            MessagePort & operator = ( CFMessagePortRef value );
+            
+            virtual CFTypeID  GetTypeID( void ) const;
+            virtual CFTypeRef GetCFObject( void ) const;
+            
+            friend void swap( MessagePort & v1, MessagePort & v2 );
+            
+        private:
+            
+            CFMessagePortRef _cfObject;
+    };
+}
 
-/*
- * Disable warnings about class members not having DLL-interface.
- * Eg: std::shared_ptr
- */
-#ifdef _WIN32
-#pragma warning( push )
-#pragma warning( disable: 4251 )
-#endif
-
-#if defined( __cplusplus ) && ( __cplusplus > 199711L || ( defined( _MSC_VER ) && _MSC_VER >= 1800 ) )
-#define CFPP_HAS_CPP11  1
-#endif
-
-#ifdef _WIN32
-#ifdef CFPP_DLL_BUILD
-#define CFPP_EXPORT __declspec( dllexport )
-#else
-#define CFPP_EXPORT __declspec( dllimport )
-#endif
-#else
-#define CFPP_EXPORT     
-#endif
-
-#include <CF++/CFPP-Type.hpp>
-#include <CF++/CFPP-PropertyListType.hpp>
-#include <CF++/CFPP-AutoPointer.hpp>
-#include <CF++/CFPP-Boolean.hpp>
-#include <CF++/CFPP-Number.hpp>
-#include <CF++/CFPP-String.hpp>
-#include <CF++/CFPP-URL.hpp>
-#include <CF++/CFPP-Data.hpp>
-#include <CF++/CFPP-Date.hpp>
-#include <CF++/CFPP-Array.hpp>
-#include <CF++/CFPP-Pair.hpp>
-#include <CF++/CFPP-Dictionary.hpp>
-#include <CF++/CFPP-Error.hpp>
-#include <CF++/CFPP-UUID.hpp>
-#include <CF++/CFPP-ReadStream.hpp>
-#include <CF++/CFPP-WriteStream.hpp>
-#include <CF++/CFPP-PropertyListType-Definition.hpp>
-#include <CF++/CFPP-MessagePort.hpp>
-
-#ifdef _WIN32
-#pragma warning( pop )
-#endif
-
-#endif /* CFPP */
+#endif /* CFPP_NOTIFICATION_CENTER_H */
