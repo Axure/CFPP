@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050CB3481CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; };
-		050CB3491CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; };
-		050CB34A1CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; };
-		050CB34B1CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; };
+		050CB3481CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB3491CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB34A1CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		050CB34B1CBCF078008CE9FC /* CFPP-MessagePort.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 050CB3471CBCF078008CE9FC /* CFPP-MessagePort.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		050CB3501CBCF08A008CE9FC /* CFPP-MessagePort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB34F1CBCF08A008CE9FC /* CFPP-MessagePort.cpp */; };
 		050CB3511CBCF08A008CE9FC /* CFPP-MessagePort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB34F1CBCF08A008CE9FC /* CFPP-MessagePort.cpp */; };
 		050CB3521CBCF08A008CE9FC /* CFPP-MessagePort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050CB34F1CBCF08A008CE9FC /* CFPP-MessagePort.cpp */; };
