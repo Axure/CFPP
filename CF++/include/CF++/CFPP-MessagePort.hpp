@@ -33,8 +33,8 @@
  * @abstract    CoreFoundation++ CFMessagePortRef wrapper
  */
 
-#ifndef CFPP_NOTIFICATION_CENTER_H
-#define CFPP_NOTIFICATION_CENTER_H
+#ifndef CFPP_MESSAGE_PORT_H
+#define CFPP_MESSAGE_PORT_H
 
 namespace CF
 {
@@ -70,4 +70,4 @@ namespace CF
     };
 }
 
-#endif /* CFPP_NOTIFICATION_CENTER_H */
+#endif /* CFPP_MESSAGE_PORT_H */
