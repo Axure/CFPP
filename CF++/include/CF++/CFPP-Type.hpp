@@ -50,23 +50,24 @@ namespace CF
             bool operator == ( const Type & value ) const;
             bool operator != ( const Type & value ) const;
             
-            operator CFTypeRef              () const;
-            operator CFBooleanRef           () const;
-            operator CFNumberRef            () const;
-            operator CFDateRef              () const;
-            operator CFStringRef            () const;
-            operator CFMutableStringRef     () const;
-            operator CFURLRef               () const;
-            operator CFDataRef              () const;
-            operator CFMutableDataRef       () const;
-            operator CFArrayRef             () const;
-            operator CFMutableArrayRef      () const;
-            operator CFDictionaryRef        () const;
-            operator CFMutableDictionaryRef () const;
-            operator CFUUIDRef              () const;
-            operator CFErrorRef             () const;
-            operator CFReadStreamRef        () const;
-            operator CFWriteStreamRef       () const;
+            operator CFTypeRef                  () const;
+            operator CFBooleanRef               () const;
+            operator CFNumberRef                () const;
+            operator CFDateRef                  () const;
+            operator CFStringRef                () const;
+            operator CFMutableStringRef         () const;
+            operator CFURLRef                   () const;
+            operator CFDataRef                  () const;
+            operator CFMutableDataRef           () const;
+            operator CFArrayRef                 () const;
+            operator CFMutableArrayRef          () const;
+            operator CFDictionaryRef            () const;
+            operator CFMutableDictionaryRef     () const;
+            operator CFUUIDRef                  () const;
+            operator CFErrorRef                 () const;
+            operator CFReadStreamRef            () const;
+            operator CFWriteStreamRef           () const;
+            operator CFNotificationCenterRef    () const;
             
             std::string Description( void ) const;
             CFHashCode  Hash( void ) const;
@@ -86,6 +87,7 @@ namespace CF
             bool IsError( void ) const;
             bool IsReadStream( void ) const;
             bool IsWriteStream( void ) const;
+            bool IsNotificationCenter( void ) const;
             
             friend std::ostream & operator << ( std::ostream & os, const Type & obj );
     };

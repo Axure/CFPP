@@ -37,6 +37,21 @@
 
 namespace CF
 {
+    NotificationCenter NotificationCenter::GetDarwinNotifyCenter( void )
+    {
+        return CFNotificationCenterGetDarwinNotifyCenter();
+    }
+    
+    NotificationCenter NotificationCenter::GetDistributedCenter( void )
+    {
+        return CFNotificationCenterGetDistributedCenter();
+    }
+    
+    NotificationCenter NotificationCenter::GetLocalCenter( void )
+    {
+        return CFNotificationCenterGetLocalCenter();
+    }
+    
     NotificationCenter::NotificationCenter( void ): _cfObject( NULL )
     {}
     
@@ -120,6 +135,56 @@ namespace CF
     CFTypeRef NotificationCenter::GetCFObject( void ) const
     {
         return this->_cfObject;
+    }
+    
+    void NotificationCenter::PostNotification( const String & name, const void * object, const Dictionary & userInfo, bool deliverImmediately ) const
+    {
+        if( this->_cfObject == NULL )
+        {
+            return;
+        }
+        
+        CFNotificationCenterPostNotification( this->_cfObject, name, object, userInfo, deliverImmediately );
+    }
+    
+    void NotificationCenter::PostNotificationWithOptions( const String & name, const void * object, const Dictionary & userInfo, CFOptionFlags options ) const
+    {
+        if( this->_cfObject == NULL )
+        {
+            return;
+        }
+        
+        CFNotificationCenterPostNotificationWithOptions( this->_cfObject, name, object, userInfo, options );
+    }
+    
+    void NotificationCenter::AddObserver( const void * observer, CFNotificationCallback callback, const String & name, const void * object, CFNotificationSuspensionBehavior suspensionBehavior )
+    {
+        if( this->_cfObject == NULL )
+        {
+            return;
+        }
+        
+        CFNotificationCenterAddObserver( this->_cfObject, observer, callback, name, object, suspensionBehavior );
+    }
+    
+    void NotificationCenter::RemoveEveryObserver( const void * observer )
+    {
+        if( this->_cfObject == NULL )
+        {
+            return;
+        }
+        
+        CFNotificationCenterRemoveEveryObserver( this->_cfObject, observer );
+    }
+    
+    void NotificationCenter::RemoveObserver( const void * observer, const String & name, const void * object )
+    {
+        if( this->_cfObject == NULL )
+        {
+            return;
+        }
+        
+        CFNotificationCenterRemoveObserver( this->_cfObject, observer, name, object );
     }
     
     void swap( NotificationCenter & v1, NotificationCenter & v2 )

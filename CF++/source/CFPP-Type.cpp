@@ -145,6 +145,11 @@ namespace CF
         return ( this->IsWriteStream() ) ? static_cast< CFWriteStreamRef >( const_cast< void * >( this->GetCFObject() ) ) : NULL;
     }
     
+    Type::operator CFNotificationCenterRef () const
+    {
+        return ( this->IsNotificationCenter() ) ? static_cast< CFNotificationCenterRef >( const_cast< void * >( this->GetCFObject() ) ) : NULL;
+    }
+    
     std::string Type::Description( void ) const
     {
         CFStringRef  cfDescription;
@@ -271,6 +276,11 @@ namespace CF
         return this->GetTypeID() == CFWriteStreamGetTypeID();
     }
     
+    bool Type::IsNotificationCenter( void ) const
+    {
+        return this->GetTypeID() == CFNotificationCenterGetTypeID();
+    }
+    
     void Type::Show( void ) const
     {
         std::string className;
@@ -324,6 +334,10 @@ namespace CF
         else if( this->IsWriteStream() )
         {
             className = "CF::WriteStream";
+        }
+        else if( this->IsNotificationCenter() )
+        {
+            className = "CF::NotificationCenter";
         }
         
         std::cout << className << " - " << this->Description() << std::endl;

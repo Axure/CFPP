@@ -42,6 +42,10 @@ namespace CF
     {
         public:
             
+            static NotificationCenter GetDarwinNotifyCenter( void );
+            static NotificationCenter GetDistributedCenter( void );
+            static NotificationCenter GetLocalCenter( void );
+            
             NotificationCenter( void );
             NotificationCenter( const NotificationCenter & value );
             NotificationCenter( const AutoPointer & value );
@@ -61,6 +65,12 @@ namespace CF
             
             virtual CFTypeID  GetTypeID( void ) const;
             virtual CFTypeRef GetCFObject( void ) const;
+            
+            void PostNotification( const String & name, const void * object, const Dictionary & userInfo, bool deliverImmediately ) const;
+            void PostNotificationWithOptions( const String & name, const void * object, const Dictionary & userInfo, CFOptionFlags options ) const;
+            void AddObserver( const void * observer, CFNotificationCallback callback, const String & name, const void * object, CFNotificationSuspensionBehavior suspensionBehavior );
+            void RemoveEveryObserver( const void * observer );
+            void RemoveObserver( const void * observer, const String & name, const void * object );
             
             friend void swap( NotificationCenter & v1, NotificationCenter & v2 );
             
