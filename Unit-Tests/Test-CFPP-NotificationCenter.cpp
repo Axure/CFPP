@@ -38,7 +38,225 @@
 
 using namespace testing;
 
-TEST( CFPP_NotificationCenter, XXX )
+TEST( CFPP_NotificationCenter, GetDarwinNotifyCenter )
 {
-    ASSERT_TRUE( true );
+    CF::NotificationCenter c;
+    
+    c = CF::NotificationCenter::GetDarwinNotifyCenter();
+    
+    ASSERT_TRUE( c.IsValid() );
+    ASSERT_TRUE( c.GetCFObject() == CFNotificationCenterGetDarwinNotifyCenter() );
+}
+
+TEST( CFPP_NotificationCenter, GetDistributedCenter )
+{
+    CF::NotificationCenter c;
+    
+    c = CF::NotificationCenter::GetDistributedCenter();
+    ASSERT_TRUE( c.GetCFObject() == CFNotificationCenterGetDistributedCenter() );
+    
+    ASSERT_TRUE( c.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, GetLocalCenter )
+{
+    CF::NotificationCenter c;
+    
+    c = CF::NotificationCenter::GetLocalCenter();
+    ASSERT_TRUE( c.GetCFObject() == CFNotificationCenterGetLocalCenter() );
+    
+    ASSERT_TRUE( c.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR )
+{
+    CF::NotificationCenter c;
+    
+    ASSERT_FALSE( c.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CCTOR )
+{
+    CF::NotificationCenter c1( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c2( static_cast< CFNotificationCenterRef >( NULL ) );
+    CF::NotificationCenter c3( c1 );
+    CF::NotificationCenter c4( c2 );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_TRUE(  c3.IsValid() );
+    ASSERT_FALSE( c4.IsValid() );
+    
+    ASSERT_TRUE( c1.GetCFObject() == c3.GetCFObject() );
+    ASSERT_TRUE( c2.GetCFObject() == c4.GetCFObject() );
+}
+
+#ifdef CFPP_HAS_CPP11
+TEST( CFPP_NotificationCenter, MCTOR )
+{
+    CF::NotificationCenter c1( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c2( static_cast< CFNotificationCenterRef >( NULL ) );
+    CF::NotificationCenter c3( std::move( c1 ) );
+    CF::NotificationCenter c4( std::move( c2 ) );
+    
+    ASSERT_FALSE( c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_TRUE(  c3.IsValid() );
+    ASSERT_FALSE( c4.IsValid() );
+    
+    ASSERT_TRUE( c3.GetCFObject() == CFNotificationCenterGetLocalCenter() );
+}
+#endif
+
+TEST( CFPP_NotificationCenter, CTOR_AutoPointer )
+{
+    CF::NotificationCenter c1( CF::AutoPointer( CFRetain( CFNotificationCenterGetLocalCenter() ) ) );
+    CF::NotificationCenter c2( CF::AutoPointer( CFUUIDCreate( NULL ) ) );
+    CF::NotificationCenter c3( CF::AutoPointer( NULL ) );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_CFType )
+{
+    CF::NotificationCenter c1( static_cast< CFTypeRef >( CFNotificationCenterGetLocalCenter() ) );
+    CF::NotificationCenter c2( CF::Boolean().GetCFObject() );
+    CF::NotificationCenter c3( static_cast< CFTypeRef >( NULL ) );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_CFNotificationCenter )
+{
+    CF::NotificationCenter c1( CFNotificationCenterGetLocalCenter() );
+    CF::NotificationCenter c2( static_cast< CFNotificationCenterRef >( const_cast< void * >( CF::Boolean().GetCFObject() ) ) );
+    CF::NotificationCenter c3( static_cast< CFNotificationCenterRef >( NULL ) );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_OperatorAssignNotificationCenter )
+{
+    CF::NotificationCenter c1( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c2( CF::NotificationCenter::GetDistributedCenter() );
+    
+    c2 = c1;
+    
+    ASSERT_TRUE( c2.IsValid() );
+    ASSERT_TRUE( c2.GetCFObject() == c1.GetCFObject() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_OperatorAssignAutoPointer )
+{
+    CF::NotificationCenter c1;
+    CF::NotificationCenter c2( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c3( CF::NotificationCenter::GetLocalCenter() );
+    
+    ASSERT_FALSE( c1.IsValid() );
+    ASSERT_TRUE(  c2.IsValid() );
+    ASSERT_TRUE(  c3.IsValid() );
+    
+    c1 = CF::AutoPointer( CFRetain( CFNotificationCenterGetLocalCenter() ) );
+    c2 = CF::AutoPointer( CFUUIDCreate( NULL ) );
+    c3 = CF::AutoPointer( NULL );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_OperatorAssignCFType )
+{
+    CF::NotificationCenter c1;
+    CF::NotificationCenter c2( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c3( CF::NotificationCenter::GetLocalCenter() );
+    
+    ASSERT_FALSE( c1.IsValid() );
+    ASSERT_TRUE(  c2.IsValid() );
+    ASSERT_TRUE(  c3.IsValid() );
+    
+    c1 = static_cast< CFTypeRef >( CFNotificationCenterGetLocalCenter() );
+    c2 = CF::Boolean().GetCFObject();
+    c3 = static_cast< CFTypeRef >( NULL );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, CTOR_OperatorAssignCFNotificationCenter )
+{
+    CF::NotificationCenter c1;
+    CF::NotificationCenter c2( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c3( CF::NotificationCenter::GetLocalCenter() );
+    
+    ASSERT_FALSE( c1.IsValid() );
+    ASSERT_TRUE(  c2.IsValid() );
+    ASSERT_TRUE(  c3.IsValid() );
+    
+    c1 = CFNotificationCenterGetLocalCenter();
+    c2 = static_cast< CFNotificationCenterRef >( const_cast< void * >( CF::Boolean().GetCFObject() ) );
+    c3 = static_cast< CFNotificationCenterRef >( NULL );
+    
+    ASSERT_TRUE(  c1.IsValid() );
+    ASSERT_FALSE( c2.IsValid() );
+    ASSERT_FALSE( c3.IsValid() );
+}
+
+TEST( CFPP_NotificationCenter, GetTypeID )
+{
+    CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
+    
+    ASSERT_EQ( c.GetTypeID(), CFNotificationCenterGetTypeID() );
+}
+
+TEST( CFPP_NotificationCenter, GetCFObject )
+{
+    CF::NotificationCenter c1( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c2;
+    
+    ASSERT_TRUE( c1.GetCFObject() != NULL );
+    ASSERT_TRUE( c2.GetCFObject() == NULL );
+    ASSERT_EQ( CFGetTypeID( c1.GetCFObject() ), CFNotificationCenterGetTypeID() );
+}
+
+TEST( CFPP_NotificationCenter, PostNotification )
+{}
+
+TEST( CFPP_NotificationCenter, PostNotificationWithOptions )
+{}
+
+TEST( CFPP_NotificationCenter, AddObserver )
+{}
+
+TEST( CFPP_NotificationCenter, RemoveEveryObserver )
+{}
+
+TEST( CFPP_NotificationCenter, RemoveObserver )
+{}
+
+TEST( CFPP_NotificationCenter, Swap )
+{
+    CF::NotificationCenter c1( CF::NotificationCenter::GetLocalCenter() );
+    CF::NotificationCenter c2( CF::NotificationCenter::GetDistributedCenter() );
+    
+    ASSERT_TRUE( c1.IsValid() );
+    ASSERT_TRUE( c2.IsValid() );
+    
+    ASSERT_TRUE( c1.GetCFObject() == CFNotificationCenterGetLocalCenter() );
+    ASSERT_TRUE( c2.GetCFObject() == CFNotificationCenterGetDistributedCenter() );
+    
+    swap( c1, c2 );
+    
+    ASSERT_TRUE( c1.IsValid() );
+    ASSERT_TRUE( c2.IsValid() );
+    
+    ASSERT_TRUE( c1.GetCFObject() == CFNotificationCenterGetDistributedCenter() );
+    ASSERT_TRUE( c2.GetCFObject() == CFNotificationCenterGetLocalCenter() );
 }
