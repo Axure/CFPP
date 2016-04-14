@@ -256,7 +256,7 @@ TEST( CFPP_NotificationCenter, PostNotification )
     int                    observer( 0 );
     int                    object( 0 );
     CF::String             name( "test" );
-    CF::Dictionary         info( { { "foo", "bar" }, { "hello", "world" } } );
+    CF::Dictionary         info;
     CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
     
     c.AddObserver
@@ -305,7 +305,7 @@ TEST( CFPP_NotificationCenter, PostNotificationWithOptions )
     int                    observer( 0 );
     int                    object( 0 );
     CF::String             name( "test" );
-    CF::Dictionary         info( { { "foo", "bar" }, { "hello", "world" } } );
+    CF::Dictionary         info;
     CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
     
     c.AddObserver
@@ -354,7 +354,7 @@ TEST( CFPP_NotificationCenter, AddObserver )
     int                    observer( 0 );
     int                    object( 0 );
     CF::String             name( "test" );
-    CF::Dictionary         info( { { "foo", "bar" }, { "hello", "world" } } );
+    CF::Dictionary         info;
     CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
     
     c.AddObserver
@@ -403,7 +403,7 @@ TEST( CFPP_NotificationCenter, RemoveEveryObserver )
     int                    observer( 0 );
     int                    object( 0 );
     CF::String             name( "test" );
-    CF::Dictionary         info( { { "foo", "bar" }, { "hello", "world" } } );
+    CF::Dictionary         info;
     CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
     
     c.AddObserver
@@ -460,7 +460,7 @@ TEST( CFPP_NotificationCenter, RemoveObserver )
     int                    observer( 0 );
     int                    object( 0 );
     CF::String             name( "test" );
-    CF::Dictionary         info( { { "foo", "bar" }, { "hello", "world" } } );
+    CF::Dictionary         info;
     CF::NotificationCenter c( CF::NotificationCenter::GetLocalCenter() );
     
     c.AddObserver
