@@ -292,9 +292,9 @@ TEST( CFPP_NotificationCenter, PostNotification )
     
     ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
     ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
+    ASSERT_TRUE( name == NotificationArgs.name );
     ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
+    ASSERT_TRUE( info == NotificationArgs.userInfo );
     ASSERT_TRUE( NotificationCount         == 1 );
     
     c.RemoveEveryObserver( &observer );
@@ -341,9 +341,9 @@ TEST( CFPP_NotificationCenter, PostNotificationWithOptions )
     
     ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
     ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
+    ASSERT_TRUE( name == NotificationArgs.name );
     ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
+    ASSERT_TRUE( info == NotificationArgs.userInfo );
     ASSERT_TRUE( NotificationCount         == 1 );
     
     c.RemoveEveryObserver( &observer );
@@ -368,32 +368,13 @@ TEST( CFPP_NotificationCenter, AddObserver )
     
     NotificationCount = 0;
     
-    memset( &NotificationArgs, 0, sizeof( NotificationCallbackArgs ) );
-    
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
-    
     c.PostNotification( "foo", NULL, NULL, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
+    ASSERT_TRUE( NotificationCount == 0 );
     
     c.PostNotification( "test", &object, info, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
-    ASSERT_TRUE( NotificationCount         == 1 );
+    ASSERT_TRUE( NotificationCount == 1 );
     
     c.RemoveEveryObserver( &observer );
 }
@@ -417,42 +398,18 @@ TEST( CFPP_NotificationCenter, RemoveEveryObserver )
     
     NotificationCount = 0;
     
-    memset( &NotificationArgs, 0, sizeof( NotificationCallbackArgs ) );
-    
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
-    
     c.PostNotification( "foo", NULL, NULL, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
+    ASSERT_TRUE( NotificationCount == 0 );
     
     c.PostNotification( "test", &object, info, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
-    ASSERT_TRUE( NotificationCount         == 1 );
+    ASSERT_TRUE( NotificationCount == 1 );
     
     c.RemoveEveryObserver( &observer );
     c.PostNotification( "test", &object, info, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
-    ASSERT_TRUE( NotificationCount         == 1 );
+    ASSERT_TRUE( NotificationCount == 1 );
 }
 
 TEST( CFPP_NotificationCenter, RemoveObserver )
@@ -474,42 +431,18 @@ TEST( CFPP_NotificationCenter, RemoveObserver )
     
     NotificationCount = 0;
     
-    memset( &NotificationArgs, 0, sizeof( NotificationCallbackArgs ) );
-    
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
-    
     c.PostNotification( "foo", NULL, NULL, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == NULL );
-    ASSERT_TRUE( NotificationArgs.observer == NULL );
-    ASSERT_TRUE( NotificationArgs.name     == NULL );
-    ASSERT_TRUE( NotificationArgs.object   == NULL );
-    ASSERT_TRUE( NotificationArgs.userInfo == NULL );
-    ASSERT_TRUE( NotificationCount         == 0 );
+    ASSERT_TRUE( NotificationCount == 0 );
     
     c.PostNotification( "test", &object, info, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
-    ASSERT_TRUE( NotificationCount         == 1 );
+    ASSERT_TRUE( NotificationCount == 1 );
     
     c.RemoveObserver( &observer, name, &object );
     c.PostNotification( "test", &object, info, true );
     
-    ASSERT_TRUE( NotificationArgs.center   == c.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.observer == &observer );
-    ASSERT_TRUE( NotificationArgs.name     == name.GetCFObject() );
-    ASSERT_TRUE( NotificationArgs.object   == &object );
-    ASSERT_TRUE( NotificationArgs.userInfo == info.GetCFObject() );
-    ASSERT_TRUE( NotificationCount         == 1 );
+    ASSERT_TRUE( NotificationCount == 1 );
 }
 
 TEST( CFPP_NotificationCenter, Swap )
