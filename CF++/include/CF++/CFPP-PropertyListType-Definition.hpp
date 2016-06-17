@@ -39,7 +39,7 @@
 namespace CF
 {
     template < class T >
-    T PropertyListType< T >::FromPropertyList( std::string path )
+    T PropertyListType< T >::FromPropertyList( const std::string & path )
     {
         Data        data;
         URL         url;
@@ -65,24 +65,33 @@ namespace CF
     }
     
     template < class T >
-    T PropertyListType< T >::FromPropertyListString( std::string plist )
+    T PropertyListType< T >::FromPropertyListString( const std::string & plist )
     {
-        AutoPointer ap;
-        Data        data;
-        
         if( plist.length() == 0 )
         {
             return static_cast< CFTypeRef >( NULL );
         }
         
-        data = CF::Data( plist );
-        ap   = CFPropertyListCreateWithData( static_cast< CFAllocatorRef >( NULL ), data, 0, NULL, NULL );
+        return FromPropertyListData( Data( plist ) );
+    }
+    
+    template < class T >
+    T PropertyListType< T >::FromPropertyListData( const Data & plist )
+    {
+        AutoPointer ap;
+        
+        if( plist.GetLength() == 0 )
+        {
+            return static_cast< CFTypeRef >( NULL );
+        }
+        
+        ap = CFPropertyListCreateWithData( static_cast< CFAllocatorRef >( NULL ), plist, 0, NULL, NULL );
         
         return ap.As< T >();
     }
     
     template < class T >
-    bool PropertyListType< T >::ToPropertyList( std::string path, PropertyListFormat format ) const
+    bool PropertyListType< T >::ToPropertyList( const std::string & path, PropertyListFormat format ) const
     {
         URL         url;
         Data        d;
